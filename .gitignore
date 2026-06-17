@@ -1,0 +1,30 @@
+# Dependencies
+node_modules/
+apps/web/dist/
+
+# .NET
+api/**/bin/
+api/**/obj/
+
+# Env & secrets
+.env
+.env.local
+*.user
+
+# IDE
+.vs/
+.idea/
+*.swp
+
+# Uploads (keep folder)
+api/PressBangalore.Api/wwwroot/uploads/*
+!api/PressBangalore.Api/wwwroot/uploads/.gitkeep
+
+# Release APK (build locally — do not commit large binaries)
+release/*.apk
+
+# Capacitor / Android
+apps/web/android/.gradle/
+apps/web/android/app/build/
+apps/web/android/build/
+apps/web/android/local.properties

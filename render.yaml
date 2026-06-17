@@ -1,0 +1,11 @@
+services:
+  - type: web
+    name: pressbangalore-demo
+    runtime: static
+    buildCommand: cd apps/web && npm ci && npm run build
+    staticPublishPath: apps/web/dist
+    pullRequestPreviewsEnabled: true
+    headers:
+      - path: /*
+        name: Cache-Control
+        value: public, max-age=0, must-revalidate

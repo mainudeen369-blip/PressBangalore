@@ -1,0 +1,78 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --color-brand: #e1306c;
+  --color-surface: #000000;
+  --color-card: #121212;
+  --color-elevated: #1a1a1a;
+  --color-muted: #a8a8a8;
+  --color-border: #262626;
+}
+
+* { box-sizing: border-box; }
+
+html, body, #root { height: 100%; }
+
+body {
+  margin: 0;
+  font-family: var(--font-sans);
+  background: #000;
+  color: #fafafa;
+  -webkit-font-smoothing: antialiased;
+  overscroll-behavior: none;
+}
+
+::-webkit-scrollbar { width: 0; height: 0; }
+
+@layer components {
+  .input {
+    @apply w-full rounded-2xl border border-[#262626] bg-[#121212] px-4 py-3.5 text-sm outline-none transition-colors placeholder:text-[#666] focus:border-[#dd2a7b];
+  }
+  .btn-primary {
+    @apply rounded-2xl bg-gradient-to-r from-[#f58529] via-[#dd2a7b] to-[#8134af] px-5 py-3 text-sm font-semibold text-white shadow-lg shadow-[#dd2a7b]/20 transition active:scale-[0.98];
+  }
+  .btn-ghost {
+    @apply rounded-2xl border border-[#262626] bg-[#121212] px-4 py-2.5 text-sm font-medium transition hover:bg-[#1a1a1a];
+  }
+  .chip {
+    @apply rounded-full px-3.5 py-1.5 text-xs font-semibold transition active:scale-95;
+  }
+  .chip-active {
+    @apply bg-white text-black;
+  }
+  .chip-inactive {
+    @apply bg-[#262626] text-white;
+  }
+  .card {
+    @apply rounded-2xl border border-[#262626] bg-[#121212];
+  }
+  .gradient-text {
+    @apply bg-gradient-to-r from-[#f58529] via-[#dd2a7b] to-[#8134af] bg-clip-text text-transparent;
+  }
+}
+
+@keyframes pulse-ring {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(221, 42, 123, 0.5); }
+  50% { box-shadow: 0 0 0 4px rgba(221, 42, 123, 0); }
+}
+
+.story-ring {
+  background: linear-gradient(45deg, #f58529, #dd2a7b, #8134af);
+  padding: 2px;
+  border-radius: 9999px;
+}
+
+.story-ring-seen {
+  background: #363636;
+  padding: 2px;
+  border-radius: 9999px;
+}
+
+.safe-top {
+  padding-top: env(safe-area-inset-top, 0px);
+}
+
+.safe-bottom {
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+}
