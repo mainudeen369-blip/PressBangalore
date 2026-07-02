@@ -31,3 +31,6 @@ apps/web/android/local.properties
 
 # Python doc generator
 docs/__pycache__/
+
+# Personal/legal docs (contain ID numbers — keep local only)
+docs/NDA*.pdf
